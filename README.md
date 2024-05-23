@@ -1,2 +1,4 @@
 # tourment-d-un-tudiant
-pratique de mon département préféré
+Маханенко Нелли Васильевна 
+Студентка ФН1-41Б
+Практика за семестр 
