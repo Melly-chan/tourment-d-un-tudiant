@@ -1,31 +1,24 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Параметры для розы
 alpha = 0.4
 beta = 2 / 7
 
-# Функция розы
 def rose(t, alpha, beta):
     return alpha * np.cos(beta * t)
 
-# Увеличиваем количество оборотов розы
 t = np.linspace(0, 50 * np.pi, 50000)
 z = rose(t, alpha, beta) * np.exp(1j * t)
 
-# Конформное отображение для варианта 13
 def f(z):
     return 1 + np.sin(3 * z)
 
-# Применяем отображение
 w = f(z)
 
-# Визуализация аппроксимации границ по методу A1.1
 plt.figure(figsize=(14, 7))
 
-# Аппроксимация границ в прообразе
 plt.subplot(1, 2, 1)
-plt.plot(z.real, z.imag, color='magenta', label='D1')  # Используем розовый цвет
+plt.plot(z.real, z.imag, color='magenta', label='D1')
 plt.xlabel('Re(z)')
 plt.ylabel('Im(z)')
 plt.title('Прообраз розы (D1)')
@@ -35,9 +28,8 @@ plt.grid(True)
 plt.xlim(-1.5, 1.5)
 plt.ylim(-1.5, 1.5)
 
-# Аппроксимация границ в образе
 plt.subplot(1, 2, 2)
-plt.plot(w.real, w.imag, color='purple', label='f(z)')  # Используем фиолетовый цвет
+plt.plot(w.real, w.imag, color='purple', label='f(z)')
 plt.xlabel('Re(w)')
 plt.ylabel('Im(w)')
 plt.title('Образ розы (f(z))')
